@@ -35,8 +35,8 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      connectSrc: ["'self'", "https://sih2025hackathon.onrender.com/"],
-       mediaSrc: ["'self'", "https://sih2025hackathon.onrender.com/"],
+      connectSrc: ["'self'", "https://sih2025hackathon.onrender.com"],
+       mediaSrc: ["'self'", "https://sih2025hackathon.onrender.com"],
       
     }
   }
