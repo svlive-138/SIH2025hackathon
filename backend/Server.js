@@ -50,7 +50,8 @@ app.use('/uploads/videos', (req, res, next) => {
     'http://localhost:5000',
     'http://127.0.0.1:5000',
     'http://localhost:5500',
-    'http://127.0.0.1:5500'
+    'http://127.0.0.1:5500',
+    'https://sih2025hackathon.onrender.com'
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
