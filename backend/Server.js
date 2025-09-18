@@ -27,9 +27,18 @@ app.use(cors({
 }));
 
 // Helmet: set secure headers
+//app.use(helmet({
+  //crossOriginResourcePolicy: true,
+//  contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false
+//}));
 app.use(helmet({
-  crossOriginResourcePolicy: true,
-  contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      connectSrc: ["'self'", "https://sih2025hackathon.onrender.com/"],
+      
+    }
+  }
 }));
 
 app.use(express.json({ limit: '10mb' }));
