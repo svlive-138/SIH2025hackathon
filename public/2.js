@@ -995,7 +995,7 @@ class ContentManagementSystem {
 
         try {
             const token = localStorage.getItem('jwtToken');
-            const response = await fetch('http://localhost:5000/api/content/upload-video', {
+            const response = await fetch('https://sih2025hackathon.onrender.com/api/content/upload-video', {
                 method: 'POST',
                 headers: token ? { 'Authorization': 'Bearer ' + token } : {},
                 body: formData
