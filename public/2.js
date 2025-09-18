@@ -498,7 +498,7 @@ class ContentManagementSystem {
         const username = document.getElementById('username').value.trim();
         const password = document.getElementById('password').value.trim();
         console.log('Login attempt:', username);
-        fetch('https://sih2025hackathon.onrender.com//api/auth/login', {
+        fetch('https://sih2025hackathon.onrender.com/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password })
