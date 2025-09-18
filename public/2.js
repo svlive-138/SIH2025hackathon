@@ -600,7 +600,7 @@ class ContentManagementSystem {
     }
     async fetchContentLibrary() {
         try {
-            const response = await fetch('http://localhost:5000/api/content/list');
+            const response = await fetch('https://sih2025hackathon.onrender.com/api/content/list');
             if (!response.ok) throw new Error('Failed to fetch content');
             const data = await response.json();
             // Map backend data to expected frontend format
