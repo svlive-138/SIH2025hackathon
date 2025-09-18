@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ਗਰਾਮੀਣ ਡਿਜੀਟਲ ਸਿੱਖਿਆ ਪਲੇਟਫਾਰਮ - Rural Digital Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Toggle (Always Visible) -->
+    <div class="language-toggle">
+        <button id="langToggle" class="btn btn--sm">🌐 ਪੰਜਾਬੀ</button>
+    </div>
+
+
+    <!-- Offline Status Indicator -->
+    <div id="offlineIndicator" class="offline-indicator">
+        <span id="offlineStatus" data-en="🌐 Online" data-hi="🌐 ऑनलाइन" data-pa="🌐 ਔਨਲਾਈਨ">🌐 Online</span>
+    </div>
+
+    <!-- Landing Page -->
+    <div id="landingPage" class="page active">
+       
+        <div class="container">
+           
+            <div class="landing-hero">
+                <h1 data-en="Digital Learning Platform for Punjab" data-hi="पंजाब के लिए डिजिटल लर्निंग प्लेटफॉर्म" data-pa="ਪੰਜਾਬ ਲਈ ਡਿਜੀਟਲ ਸਿੱਖਿਆ ਪਲੇਟਫਾਰਮ">Digital Learning Platform for Punjab</h1>
+                <p data-en="Quality education in English, Hindi & Punjabi for rural students" data-hi="ग्रामीण छात्रों के लिए अंग्रेजी, हिंदी और पंजाबी में गुणवत्तापूर्ण शिक्षा" data-pa="ਪੇਂਡੂ ਵਿਦਿਆਰਥੀਆਂ ਲਈ ਅੰਗਰੇਜ਼ੀ, ਹਿੰਦੀ ਅਤੇ ਪੰਜਾਬੀ ਵਿੱਚ ਗੁਣਵੱਤਾ ਸਿੱਖਿਆ">Quality education in English, Hindi & Punjabi for rural students</p>
+                
+                <div class="language-selection">
+                    <h3 data-en="Choose Your Language" data-hi="अपनी भाषा चुनें" data-pa="ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ">Choose Your Language</h3>
+                    <div class="language-options">
+                        <button class="language-option" data-lang="en">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-name">English</span>
+                        </button>
+                        <button class="language-option" data-lang="hi">
+                            <span class="lang-flag">🇮🇳</span>
+                            <span class="lang-name">हिंदी</span>
+                        </button>
+                        <button class="language-option" data-lang="pa">
+                            <span class="lang-flag">🇮🇳</span>
+                            <span class="lang-name">ਪੰਜਾਬੀ</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="role-selection">
+                    <div class="role-card" data-role="student">
+                        <div class="role-icon">🎓</div>
+                        <h3 data-en="Student" data-hi="छात्र" data-pa="ਵਿਦਿਆਰਥੀ">Student</h3>
+                        <p data-en="Access courses and track progress" data-hi="कोर्स एक्सेस करें और प्रगति ट्रैक करें" data-pa="ਕੋਰਸ ਦੇਖੋ ਅਤੇ ਪ੍ਰਗਤੀ ਦਾ ਪਤਾ ਲਗਾਓ">Access courses and track progress</p>
+                    </div>
+                    <div class="role-card" data-role="teacher">
+                        <div class="role-icon">👩‍🏫</div>
+                        <h3 data-en="Teacher" data-hi="शिक्षक" data-pa="ਅਧਿਆਪਕ">Teacher</h3>
+                        <p data-en="Monitor student performance" data-hi="छात्र प्रदर्शन की निगरानी करें" data-pa="ਵਿਦਿਆਰਥੀ ਪ੍ਰਦਰਸ਼ਨ ਦੀ ਨਿਗਰਾਨੀ ਕਰੋ">Monitor student performance</p>
+                    </div>
+                    <div class="role-card" data-role="parent">
+                        <div class="role-icon">👨‍👩‍👧‍👦</div>
+                        <h3 data-en="Parent" data-hi="अभिभावक" data-pa="ਮਾਤਾ-ਪਿਤਾ">Parent</h3>
+                        <p data-en="Track your child's progress" data-hi="अपने बच्चे की प्रगति ट्रैक करें" data-pa="ਆਪਣੇ ਬੱਚੇ ਦੀ ਪ੍ਰਗਤੀ ਦੇਖੋ">Track your child's progress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="page">
+        <div class="container">
+            <div class="login-form">
+                <h2 data-en="Login" data-hi="लॉगिन" data-pa="ਲਾਗਇਨ">Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label" data-en="Demo Credentials:" data-hi="डेमो क्रेडेंशियल:" data-pa="ਡੈਮੋ ਲਾਗਇਨ:">Demo Credentials:</label>
+                        <div class="demo-credentials">
+                            <div><strong data-en="Student:" data-hi="छात्र:" data-pa="ਵਿਦਿਆਰਥੀ:">Student:</strong> arjun_singh / demo123</div>
+                            <div><strong data-en="Teacher:" data-hi="शिक्षक:" data-pa="ਅਧਿਆਪਕ:">Teacher:</strong> kamalpreet_kaur / demo123</div>
+                            <div><strong data-en="Parent:" data-hi="अभिभावक:" data-pa="ਮਾਤਾ-ਪਿਤਾ:">Parent:</strong> gurmeet_singh / demo123</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="form-label" data-en="Username" data-hi="उपयोगकर्ता नाम" data-pa="ਵਰਤੋਂਕਾਰ ਨਾਮ">Username</label>
+                        <input type="text" id="username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label" data-en="Password" data-hi="पासवर्ड" data-pa="ਪਾਸਵਰਡ">Password</label>
+                        <input type="password" id="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width" data-en="Login" data-hi="लॉगिन" data-pa="ਲਾਗਇਨ">Login</button>
+                    <button type="button" id="backToLanding" class="btn btn--outline btn--full-width mt-8" data-en="Back" data-hi="वापस" data-pa="ਵਾਪਸ">Back</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Dashboard -->
+    <div id="studentDashboard" class="page">
+        <nav class="dashboard-nav">
+            <div class="nav-brand" data-en="Student Portal" data-hi="छात्र पोर्टल" data-pa="ਵਿਦਿਆਰਥੀ ਪੋਰਟਲ">Student Portal</div>
+            <div class="nav-actions">
+                <span id="studentName" class="user-name"></span>
+                <button id="studentLogout" class="btn btn--outline btn--sm" data-en="Logout" data-hi="लॉगआउट" data-pa="ਲਾਗਆਉਟ">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Student Stats -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="studentPoints">450</div>
+                                <div class="stat-label" data-en="Points" data-hi="अंक" data-pa="ਅੰਕ">Points</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="studentLevel">Level 3</div>
+                                <div class="stat-label" data-en="Current Level" data-hi="वर्तमान स्तर" data-pa="ਮੌਜੂਦਾ ਪੱਧਰ">Current Level</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🔥</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="studentStreak">7 days</div>
+                                <div class="stat-label" data-en="Streak" data-hi="लगातार" data-pa="ਲਗਾਤਾਰ">Streak</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Courses Section -->
+                    <section class="courses-section">
+                        <h2 data-en="My Courses" data-hi="मेरे कोर्स" data-pa="ਮੇਰੇ ਕੋਰਸ">My Courses</h2>
+                        <div id="coursesList" class="courses-grid">
+                            <!-- Courses will be populated by JS -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Achievements -->
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 data-en="Achievements" data-hi="उपलब्धियां" data-pa="ਉਪਲਬਧੀਆਂ">Achievements</h3>
+                            <div id="badgesList" class="badges-list">
+                                <!-- Badges will be populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leaderboard -->
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 data-en="Leaderboard" data-hi="लीडरबोर्ड" data-pa="ਲੀਡਰਬੋਰਡ">Leaderboard</h3>
+                            <div id="leaderboard" class="leaderboard">
+                                <!-- Leaderboard will be populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lesson Player -->
+    <div id="lessonPlayer" class="page">
+        <nav class="dashboard-nav">
+            <div class="nav-brand" id="lessonTitle">Lesson Player</div>
+            <div class="nav-actions">
+                <button id="backToDashboard" class="btn btn--outline btn--sm" data-en="Back to Dashboard" data-hi="डैशबोर्ड पर वापस" data-pa="ਡੈਸ਼ਬੋਰਡ ਉੱਤੇ ਵਾਪਸ">Back to Dashboard</button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="lesson-content">
+                <div class="lesson-video-placeholder">
+                    <div class="video-icon">▶️</div>
+                    <p data-en="Interactive lesson content would load here" data-hi="इंटरैक्टिव पाठ सामग्री यहां लोड होगी" data-pa="ਇੰਟਰਐਕਟਿਵ ਪਾਠ ਸਮਗਰੀ ਇੱਥੇ ਲੋਡ ਹੋਵੇਗੀ">Interactive lesson content would load here</p>
+                </div>
+                <div class="lesson-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                    <div class="progress-text">65% <span data-en="Complete" data-hi="पूर्ण" data-pa="ਮੁਕਮਲ">Complete</span></div>
+                </div>
+                <div class="lesson-actions">
+                    <button id="startQuiz" class="btn btn--primary" data-en="Take Quiz" data-hi="क्विज़ लें" data-pa="ਪ੍ਰਸ਼ਨ-ਉੱਤਰ ਲਓ">Take Quiz</button>
+                    <button id="markComplete" class="btn btn--secondary" data-en="Mark as Complete" data-hi="पूर्ण के रूप में चिह्नित करें" data-pa="ਮੁਕਮਲ ਵਜੋਂ ਨਿਸ਼ਾਨਦੇਹੀ ਕਰੋ">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Interface -->
+    <div id="quizInterface" class="page">
+        <nav class="dashboard-nav">
+            <div class="nav-brand" id="quizTitle">Quiz</div>
+            <div class="nav-actions">
+                <div class="quiz-timer">⏱️ <span id="timer">05:00</span></div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="quiz-content">
+                <div class="quiz-progress">
+                    <div class="question-counter">
+                        <span data-en="Question" data-hi="प्रश्न" data-pa="ਸਵਾਲ">Question</span> <span id="currentQuestion">1</span> <span data-en="of" data-hi="का" data-pa="ਦਾ">of</span> <span id="totalQuestions">5</span>
+                    </div>
+                    <div class="quiz-progress-bar">
+                        <div id="quizProgressFill" class="progress-fill" style="width: 20%"></div>
+                    </div>
+                </div>
+                
+                <div class="quiz-card">
+                    <h3 id="questionText">Question will appear here</h3>
+                    <div id="optionsList" class="options-list">
+                        <!-- Options will be populated by JS -->
+                    </div>
+                    <div class="quiz-actions">
+                        <button id="submitAnswer" class="btn btn--primary" data-en="Submit Answer" data-hi="उत्तर जमा करें" data-pa="ਜਵਾਬ ਜਮ੍ਹਾ ਕਰੋ">Submit Answer</button>
+                    </div>
+                </div>
+                
+                <!-- Quiz Results -->
+                <div id="quizResults" class="quiz-results hidden">
+                    <div class="results-card">
+                        <h3 data-en="Quiz Complete!" data-hi="क्विज़ पूरा!" data-pa="ਪ੍ਰਸ਼ਨ-ਉੱਤਰ ਪੂਰਾ!">Quiz Complete!</h3>
+                        <div class="score-display">
+                            <div class="score-number" id="finalScore">80%</div>
+                            <div class="score-label" data-en="Your Score" data-hi="आपका स्कोर" data-pa="ਤੁਹਾਡਾ ਸਕੋਰ">Your Score</div>
+                        </div>
+                        <div class="points-earned">
+                            <span data-en="Points Earned:" data-hi="अर्जित अंक:" data-pa="ਕਮਾਏ ਅੰਕ:">Points Earned:</span> <strong id="pointsEarned">+25</strong>
+                        </div>
+                        <div class="quiz-actions">
+                            <button id="backToCourses" class="btn btn--primary" data-en="Back to Courses" data-hi="कोर्स पर वापस" data-pa="ਕੋਰਸਾਂ ਉੱਤੇ ਵਾਪਸ">Back to Courses</button>
+                            <button id="retakeQuiz" class="btn btn--outline" data-en="Retake Quiz" data-hi="फिर से क्विज़ लें" data-pa="ਦੁਬਾਰਾ ਪ੍ਰਸ਼ਨ-ਉੱਤਰ ਲਓ">Retake Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teacher Dashboard -->
+    <div id="teacherDashboard" class="page">
+        <nav class="dashboard-nav">
+            <div class="nav-brand" data-en="Teacher Portal" data-hi="शिक्षक पोर्टल" data-pa="ਅਧਿਆਪਕ ਪੋਰਟਲ">Teacher Portal</div>
+            <div class="nav-tabs">
+               <!-- <button class="nav-tab" data-tab="overview" data-en="Overview" data-hi="अवलोकन" data-pa="ਸਾਰ">Overview</button> -->
+                <button class="nav-tab active" data-tab="content" data-en="Content Management" data-hi="सामग्री प्रबंधन" data-pa="ਸਮੱਗਰੀ ਪ੍ਰਬੰਧਨ">Content Management</button>
+             <!-- <button class="nav-tab" data-tab="analytics" data-en="Analytics" data-hi="विश्लेषण" data-pa="ਵਿਸ਼ਲੇਸ਼ਣ">Analytics</button> -->
+            </div>
+            <div class="nav-actions">
+                <span id="teacherName" class="user-name"></span>
+                <button id="teacherLogout" class="btn btn--outline btn--sm" data-en="Logout" data-hi="लॉगआउट" data-pa="ਲਾਗਆਉਟ">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="dashboard-grid">
+                <div class="main-content">
+                    <!-- Teacher Stats -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="teacherStudents">45</div>
+                                <div class="stat-label" data-en="Students" data-hi="छात्र" data-pa="ਵਿਦਿਆਰਥੀ">Students</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📊</div>
+                            <div class="stat-content">
+                                <div class="stat-number">82%</div>
+                                <div class="stat-label" data-en="Avg Score" data-hi="औसत स्कोर" data-pa="ਔਸਤ ਸਕੋਰ">Avg Score</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📚</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="teacherClasses">2</div>
+                                <div class="stat-label" data-en="Classes" data-hi="कक्षाएं" data-pa="ਕਲਾਸਾਂ">Classes</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Chart -->
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 data-en="Class Performance" data-hi="कक्षा प्रदर्शन" data-pa="ਕਲਾਸ ਪ੍ਰਦਰਸ਼ਨ">Class Performance</h3>
+                            <div class="chart-container" style="position: relative; height: 400px;">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student List -->
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 data-en="Student Performance" data-hi="छात्र प्रदर्शन" data-pa="ਵਿਦਿਆਰਥੀ ਪ੍ਰਦਰਸ਼ਨ">Student Performance</h3>
+                            <div id="studentsList" class="students-table">
+                                <!-- Students list will be populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+    <div id="contentTab" class="tab-content active">
+            <div class="container">
+                <!-- Upload Section -->
+                <div class="upload-section">
+                    <div class="section-header">
+                        <h2 data-en="Upload New Content" data-hi="नई सामग्री अपलोड करें" data-pa="ਨਵੀਂ ਸਮੱਗਰੀ ਅੱਪਲੋਡ ਕਰੋ">Upload New Content</h2>
+                        <button id="showUploadForm" class="btn btn--primary" data-en="+ Upload Content" data-hi="+ सामग्री अपलोड करें" data-pa="+ ਸਮੱਗਰੀ ਅੱਪਲੋਡ ਕਰੋ">+ Upload Content</button>
+                    </div>
+
+                    <!-- Upload Form Modal -->
+                    <div id="uploadModal" class="modal hidden">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 data-en="Upload Content" data-hi="सामग्री अपलोड करें" data-pa="ਸਮੱਗਰੀ ਅੱਪਲੋਡ ਕਰੋ">Upload Content</h3>
+                                <button id="closeUploadModal" class="modal-close">×</button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="uploadForm">
+                                    <!-- File Upload Area -->
+                                    <div class="upload-area" id="uploadArea">
+                                        <div class="upload-icon">📁</div>
+                                        <p data-en="Drag and drop files here or click to browse" data-hi="फाइलों को यहां खींचें और छोड़ें या ब्राउज़ करने के लिए क्लिक करें" data-pa="ਫਾਈਲਾਂ ਨੂੰ ਇੱਥੇ ਖਿੱਚੋ ਅਤੇ ਛੱਡੋ ਜਾਂ ਬ੍ਰਾਊਜ਼ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ">Drag and drop files here or click to browse</p>
+                                        <input type="file" id="fileInput"  name="video" accept=".mp4,.avi,.mov,.wmv,.webm,.mp3,.wav,.ogg,.m4a,.pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.gif,.webp,.svg" hidden="">
+                                        <!---- multiple="" -->
+                                    </div>
+
+                                    <!-- File List -->
+                                    <div id="fileList" class="file-list hidden"></div>
+
+                                    <!-- Content Type Selection -->
+                                    <div class="form-group">
+                                        <label class="form-label" data-en="Content Type" data-hi="सामग्री प्रकार" data-pa="ਸਮੱਗਰੀ ਦੀ ਕਿਸਮ">Content Type</label>
+                                        <select id="contentType" class="form-control" required="">
+                                            <option value="" data-en="Select Content Type" data-hi="सामग्री प्रकार चुनें" data-pa="ਸਮੱਗਰੀ ਦੀ ਕਿਸਮ ਚੁਣੋ">Select Content Type</option>
+                                            <option value="video" data-en="Video" data-hi="वीडियो" data-pa="ਵੀਡੀਓ">Video</option>
+                                            <option value="audio" data-en="Audio" data-hi="ऑडियो" data-pa="ਆਡੀਓ">Audio</option>
+                                            <option value="document" data-en="Document" data-hi="दस्तावेज़" data-pa="ਦਸਤਾਵੇਜ਼">Document</option>
+                                            <option value="image" data-en="Image" data-hi="छवि" data-pa="ਤਸਵੀਰ">Image</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Video Quality Options (shown for video content) -->
+                                    <div id="videoOptions" class="form-group hidden">
+                                        <label class="form-label" data-en="Video Quality" data-hi="वीडियो गुणवत्ता" data-pa="ਵੀਡੀਓ ਗੁਣਵੱਤਾ">Video Quality</label>
+                                        <div class="quality-options">
+                                            <label class="quality-option">
+                                                <input type="checkbox" value="240p" checked=""> 240p (300k) - <span data-en="Recommended for 2G/3G" data-hi="2G/3G के लिए अनुशंसित" data-pa="2G/3G ਲਈ ਸਿਫਾਰਸ਼ੀ">Recommended for 2G/3G</span>
+                                            </label>
+                                            <label class="quality-option">
+                                                <input type="checkbox" value="480p" checked=""> 480p (800k) - <span data-en="Recommended for 3G/4G" data-hi="3G/4G के लिए अनुशंसित" data-pa="3G/4G ਲਈ ਸਿਫਾਰਸ਼ੀ">Recommended for 3G/4G</span>
+                                            </label>
+                                            <label class="quality-option">
+                                                <input type="checkbox" value="720p"> 720p (1500k) - <span data-en="Recommended for 4G/WiFi" data-hi="4G/WiFi के लिए अनुशंसित" data-pa="4G/WiFi ਲਈ ਸਿਫਾਰਸ਼ੀ">Recommended for 4G/WiFi</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Language Tabs -->
+                                    <div class="language-tabs">
+                                        <button type="button" class="lang-tab active" data-lang="en">English</button>
+                                        <button type="button" class="lang-tab" data-lang="hi">हिंदी</button>
+                                        <button type="button" class="lang-tab" data-lang="pa">ਪੰਜਾਬੀ</button>
+                                    </div>
+
+                                    <!-- Trilingual Content Input -->
+                                    <div class="lang-content active" data-lang="en">
+                                        <div class="form-group">
+                                            <label class="form-label">Title (English)</label>
+                                            <input type="text" id="titleEn" class="form-control" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Description (English)</label>
+                                            <textarea id="descriptionEn" class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="lang-content" data-lang="hi">
+                                        <div class="form-group">
+                                            <label class="form-label">शीर्षक (हिंदी)</label>
+                                            <input type="text" id="titleHi" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">विवरण (हिंदी)</label>
+                                            <textarea id="descriptionHi" class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="lang-content" data-lang="pa">
+                                        <div class="form-group">
+                                            <label class="form-label">ਸਿਰਲੇਖ (ਪੰਜਾਬੀ)</label>
+                                            <input type="text" id="titlePa" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">ਵੇਰਵਾ (ਪੰਜਾਬੀ)</label>
+                                            <textarea id="descriptionPa" class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- Subject and Grade -->
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label" data-en="Subject" data-hi="विषय" data-pa="ਵਿਸ਼ਾ">Subject</label>
+                                            <select id="subjectSelect" class="form-control" required="">
+                                                <option value="" data-en="Select Subject" data-hi="विषय चुनें" data-pa="ਵਿਸ਼ਾ ਚੁਣੋ">Select Subject</option>
+                                                <option value="mathematics" data-en="Mathematics" data-hi="गणित" data-pa="ਗਣਿਤ">Mathematics</option>
+                                                <option value="science" data-en="Science" data-hi="विज्ञान" data-pa="ਵਿਗਿਆਨ">Science</option>
+                                                <option value="english" data-en="English" data-hi="अंग्रेजी" data-pa="ਅੰਗਰੇਜ਼ੀ">English</option>
+                                                <option value="hindi" data-en="Hindi" data-hi="हिंदी" data-pa="ਹਿੰਦੀ">Hindi</option>
+                                                <option value="punjabi" data-en="Punjabi" data-hi="पंजाबी" data-pa="ਪੰਜਾਬੀ">Punjabi</option>
+                                                <option value="social_studies" data-en="Social Studies" data-hi="सामाजिक अध्ययन" data-pa="ਸਮਾਜਕ ਅਧਿਐਨ">Social Studies</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" data-en="Grade" data-hi="कक्षा" data-pa="ਕਲਾਸ">Grade</label>
+                                            <select id="gradeSelect" class="form-control" required="">
+                                                <option value="" data-en="Select Grade" data-hi="कक्षा चुनें" data-pa="ਕਲਾਸ ਚੁਣੋ">Select Grade</option>
+                                                <option value="6" data-en="Grade 6" data-hi="कक्षा 6" data-pa="ਕਲਾਸ 6">Grade 6</option>
+                                                <option value="7" data-en="Grade 7" data-hi="कक्षा 7" data-pa="ਕਲਾਸ 7">Grade 7</option>
+                                                <option value="8" data-en="Grade 8" data-hi="कक्षा 8" data-pa="ਕਲਾਸ 8">Grade 8</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Upload Progress -->
+                                    <div id="uploadProgress" class="upload-progress hidden">
+                                        <div class="progress-info">
+                                            <span id="uploadFileName"></span>
+                                            <span id="uploadPercent">0%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div id="progressFill" class="progress-fill"></div>
+                                        </div>
+                                        <div class="upload-status">
+                                            <span id="uploadStatus" data-en="Uploading..." data-hi="अपलोड हो रहा है..." data-pa="ਅੱਪਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...">Uploading...</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="button" id="cancelUpload" class="btn btn--outline" data-en="Cancel" data-hi="रद्द करें" data-pa="ਰੱਦ ਕਰੋ">Cancel</button>
+                                        <button type="submit" id="startUpload" class="btn btn--primary" data-en="Start Upload" data-hi="अपलोड शुरू करें" data-pa="ਅੱਪਲੋਡ ਸ਼ੁਰੂ ਕਰੋ">Start Upload</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Storage Usage -->
+                    <div class="storage-widget">
+                        <h3 data-en="Storage Usage" data-hi="भंडारण उपयोग" data-pa="ਸਟੋਰੇਜ ਦੀ ਵਰਤੋਂ">Storage Usage</h3>
+                        <div class="storage-bar">
+                            <div class="storage-fill" style="width: 35%"></div>
+                        </div>
+                        <div class="storage-info">
+                            <span>3.5GB / 10GB</span>
+                            <span>65% <span data-en="available" data-hi="उपलब्ध" data-pa="ਉਪਲਬਧ">available</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Library -->
+                <div class="content-library">
+                    <div class="library-header">
+                        <h2 data-en="Content Library" data-hi="सामग्री पुस्तकालय" data-pa="ਸਮੱਗਰੀ ਲਾਇਬ੍ਰੇਰੀ">Content Library</h2>
+                        <div class="library-controls">
+                            <div class="search-bar">
+                                <input type="text" id="searchContent" placeholder="Search content..." class="form-control">
+                                <button class="search-btn">🔍</button>
+                            </div>
+                            <div class="view-controls">
+                                <button id="gridView" class="view-btn active">⊞</button>
+                                <button id="listView" class="view-btn">☰</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="content-filters">
+                        <select id="filterType" class="form-control">
+                            <option value="" data-en="All Types" data-hi="सभी प्रकार" data-pa="ਸਾਰੀਆਂ ਕਿਸਮਾਂ">All Types</option>
+                            <option value="video" data-en="Videos" data-hi="वीडियो" data-pa="ਵੀਡੀਓ">Videos</option>
+                            <option value="audio" data-en="Audio" data-hi="ऑडियो" data-pa="ਆਡੀਓ">Audio</option>
+                            <option value="document" data-en="Documents" data-hi="दस्तावेज़" data-pa="ਦਸਤਾਵੇਜ਼">Documents</option>
+                            <option value="image" data-en="Images" data-hi="छवियां" data-pa="ਤਸਵੀਰਾਂ">Images</option>
+                        </select>
+                        <select id="filterSubject" class="form-control">
+                            <option value="" data-en="All Subjects" data-hi="सभी विषय" data-pa="ਸਾਰੇ ਵਿਸ਼ੇ">All Subjects</option>
+                            <option value="mathematics" data-en="Mathematics" data-hi="गणित" data-pa="ਗਣਿਤ">Mathematics</option>
+                            <option value="science" data-en="Science" data-hi="विज्ञान" data-pa="ਵਿਗਿਆਨ">Science</option>
+                            <option value="english" data-en="English" data-hi="अंग्रेजी" data-pa="ਅੰਗਰੇਜ਼ੀ">English</option>
+                            <option value="hindi" data-en="Hindi" data-hi="हिंदी" data-pa="ਹਿੰਦੀ">Hindi</option>
+                            <option value="punjabi" data-en="Punjabi" data-hi="पंजाबी" data-pa="ਪੰਜਾਬੀ">Punjabi</option>
+                        </select>
+                        <select id="filterGrade" class="form-control">
+                            <option value="" data-en="All Grades" data-hi="सभी कक्षाएं" data-pa="ਸਾਰੀਆਂ ਕਲਾਸਾਂ">All Grades</option>
+                            <option value="6" data-en="Grade 6" data-hi="कक्षा 6" data-pa="ਕਲਾਸ 6">Grade 6</option>
+                            <option value="7" data-en="Grade 7" data-hi="कक्षा 7" data-pa="ਕਲਾਸ 7">Grade 7</option>
+                            <option value="8" data-en="Grade 8" data-hi="कक्षा 8" data-pa="ਕਲਾਸ 8">Grade 8</option>
+                        </select>
+                    </div>
+
+                    <!-- Content Grid -->
+                    <div id="contentGrid" class="content-grid">
+            <div class="content-card" onclick="cms.previewContent('video_001')">
+                <div class="content-thumbnail">🎥</div>
+                <div class="content-info">
+                    <h4 class="content-title">Basic Addition Tutorial</h4>
+                    <div class="content-meta">
+                        <span class="content-tag">Mathematics</span>
+                        <span class="content-tag">Grade 6</span>
+                        <span class="content-tag">125MB</span>
+                    </div>
+                    <div class="content-stats">
+                        <span>👁️ 234</span>
+                        <span>⬇️ 45</span>
+                    </div>
+                    <div class="content-actions">
+                        <button class="content-action" onclick="event.stopPropagation(); cms.editContent('video_001')">Edit</button>
+                        <button class="content-action" onclick="event.stopPropagation(); cms.deleteContent('video_001')">Delete</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-card" onclick="cms.previewContent('video_002')">
+                <div class="content-thumbnail">🔬</div>
+                <div class="content-info">
+                    <h4 class="content-title">States of Matter</h4>
+                    <div class="content-meta">
+                        <span class="content-tag">Science</span>
+                        <span class="content-tag">Grade 6</span>
+                        <span class="content-tag">189MB</span>
+                    </div>
+                    <div class="content-stats">
+                        <span>👁️ 178</span>
+                        <span>⬇️ 32</span>
+                    </div>
+                    <div class="content-actions">
+                        <button class="content-action" onclick="event.stopPropagation(); cms.editContent('video_002')">Edit</button>
+                        <button class="content-action" onclick="event.stopPropagation(); cms.deleteContent('video_002')">Delete</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-card" onclick="cms.previewContent('video_003')">
+                <div class="content-thumbnail">📜</div>
+                <div class="content-info">
+                    <h4 class="content-title">Gurmukhi Alphabet</h4>
+                    <div class="content-meta">
+                        <span class="content-tag">Punjabi</span>
+                        <span class="content-tag">Grade 6</span>
+                        <span class="content-tag">198MB</span>
+                    </div>
+                    <div class="content-stats">
+                        <span>👁️ 312</span>
+                        <span>⬇️ 67</span>
+                    </div>
+                    <div class="content-actions">
+                        <button class="content-action" onclick="event.stopPropagation(); cms.editContent('video_003')">Edit</button>
+                        <button class="content-action" onclick="event.stopPropagation(); cms.deleteContent('video_003')">Delete</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-card" onclick="cms.previewContent('doc_001')">
+                <div class="content-thumbnail">📄</div>
+                <div class="content-info">
+                    <h4 class="content-title">Mathematics Worksheet - Grade 6</h4>
+                    <div class="content-meta">
+                        <span class="content-tag">Mathematics</span>
+                        <span class="content-tag">Grade 6</span>
+                        <span class="content-tag">2.5MB</span>
+                    </div>
+                    <div class="content-stats">
+                        <span>👁️ 0</span>
+                        <span>⬇️ 89</span>
+                    </div>
+                    <div class="content-actions">
+                        <button class="content-action" onclick="event.stopPropagation(); cms.editContent('doc_001')">Edit</button>
+                        <button class="content-action" onclick="event.stopPropagation(); cms.deleteContent('doc_001')">Delete</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-card" onclick="cms.previewContent('audio_001')">
+                <div class="content-thumbnail">🎵</div>
+                <div class="content-info">
+                    <h4 class="content-title">English Pronunciation Guide</h4>
+                    <div class="content-meta">
+                        <span class="content-tag">English</span>
+                        <span class="content-tag">Grade 7</span>
+                        <span class="content-tag">8.7MB</span>
+                    </div>
+                    <div class="content-stats">
+                        <span>👁️ 0</span>
+                        <span>⬇️ 56</span>
+                    </div>
+                    <div class="content-actions">
+                        <button class="content-action" onclick="event.stopPropagation(); cms.editContent('audio_001')">Edit</button>
+                        <button class="content-action" onclick="event.stopPropagation(); cms.deleteContent('audio_001')">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--  preiview content model-->
+  <div id="previewModal" class="modal hidden">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="previewTitle">States of Matter</h3>
+                <button id="closePreviewModal" class="modal-close">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="previewContent">
+                <div style="text-align: center; padding: 40px; background: var(--color-bg-1); border-radius: var(--radius-base);">
+                    <div style="font-size: 64px; margin-bottom: 16px;">🔬</div>
+                    <h3>States of Matter</h3>
+                    <p>Understanding solid, liquid, and gas states</p>
+                    <p style="color: var(--color-text-secondary);"/>
+                </div>
+            </div>
+                <div class="preview-info">
+                    <div class="info-row">
+                        <span class="info-label" data-en="Type:" data-hi="प्रकार:" data-pa="ਕਿਸਮ:">Type:</span>
+                        <span id="previewType">video</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" data-en="Subject:" data-hi="विषय:" data-pa="ਵਿਸ਼ਾ:">Subject:</span>
+                        <span id="previewSubject">Science</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" data-en="Grade:" data-hi="कक्षा:" data-pa="ਕਲਾਸ:">Grade:</span>
+                        <span id="previewGrade">Grade 6</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label" data-en="Views:" data-hi="दृश्य:" data-pa="ਦ੍ਰਿਸ਼:">Views:</span>
+                        <span id="previewViews">178</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Parent Dashboard -->
+    <div id="parentDashboard" class="page">
+        <nav class="dashboard-nav">
+            <div class="nav-brand" data-en="Parent Portal" data-hi="अभिभावक पोर्टल" data-pa="ਮਾਤਾ-ਪਿਤਾ ਪੋਰਟਲ">Parent Portal</div>
+            <div class="nav-actions">
+                <span id="parentName" class="user-name"></span>
+                <button id="parentLogout" class="btn btn--outline btn--sm" data-en="Logout" data-hi="लॉगआउट" data-pa="ਲਾਗਆਉਟ">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="dashboard-grid">
+                <div class="main-content">
+                    <!-- Child Stats -->
+                    <div class="child-header">
+                        <h2 id="childName" data-en="Arjun Singh - Grade 6A" data-hi="अर्जुन सिंह - कक्षा 6अ" data-pa="ਅਰਜੁਨ ਸਿੰਘ - ਕਲਾਸ 6ਏ">Arjun Singh - Grade 6A</h2>
+                    </div>
+                    
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon">📈</div>
+                            <div class="stat-content">
+                                <div class="stat-number">82%</div>
+                                <div class="stat-label" data-en="Overall Progress" data-hi="समग्र प्रगति" data-pa="ਸਮੁੱਚੀ ਤਰੱਕੀ">Overall Progress</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⏱️</div>
+                            <div class="stat-content">
+                                <div class="stat-number">2.5 hrs</div>
+                                <div class="stat-label" data-en="Daily Time" data-hi="दैनिक समय" data-pa="ਰੋਜ਼ਾਨਾ ਸਮਾਂ">Daily Time</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-content">
+                                <div class="stat-number" id="childBadgesCount">2</div>
+                                <div class="stat-label" data-en="Badges" data-hi="बैज" data-pa="ਬੈਜ">Badges</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subject Progress -->
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 data-en="Subject Progress" data-hi="विषय प्रगति" data-pa="ਵਿਸ਼ੇ ਦੀ ਤਰੱਕੀ">Subject Progress</h3>
+                            <div id="subjectProgress" class="subject-progress">
+                                <!-- Subject progress will be populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weekly Report -->
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 data-en="Weekly Performance" data-hi="साप्ताहिक प्रदर्शन" data-pa="ਹਫ਼ਤਾਵਾਰੀ ਪ੍ਰਦਰਸ਼ਨ">Weekly Performance</h3>
+                            <div class="chart-container" style="position: relative; height: 300px;">
+                                <canvas id="weeklyChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <!-- Recent Achievements -->
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 data-en="Recent Achievements" data-hi="हाल की उपलब्धियां" data-pa="ਤਾਜ਼ਾ ਉਪਲਬਧੀਆਂ">Recent Achievements</h3>
+                            <div id="childBadges" class="badges-list">
+                                <!-- Child badges will be populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievement Notification -->
+    <div id="achievementNotification" class="achievement-notification">
+        <div class="notification-content">
+            <div class="notification-icon">🎉</div>
+            <div class="notification-text">
+                <h4 data-en="Achievement Unlocked!" data-hi="उपलब्धि अनलॉक!" data-pa="ਉਪਲਬਧੀ ਅਨਲਾਕ!">Achievement Unlocked!</h4>
+                <p id="achievementMessage"></p>
+            </div>
+        </div>
+    </div>
+    <script src="chart.js"></script>
+
+    <script src="app.js"></script>
+    <script src="2.js"></script>
+</body>
+</html>
