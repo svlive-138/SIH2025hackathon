@@ -1221,7 +1221,7 @@ class ContentManagementSystem {
         if (previewContent) {
             if (content.type === 'video' && content.fileName) {
                 // Use backend server URL for video source
-                const videoSrc = `http://localhost:5000/uploads/videos/${content.fileName}`;
+                const videoSrc = `https://sih2025hackathon.onrender.com/uploads/videos/${content.fileName}`;
                 previewContent.innerHTML = `
                     <div style="text-align: center; padding: 20px; background: var(--color-bg-1); border-radius: var(--radius-base);">
                         <video controls style="max-width:100%; max-height:360px; margin-bottom: 16px;">
